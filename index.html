@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AOS CSS Link -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Sachinda Bandara</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font (Sinhala and English) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+body{
+    background-color: black;
+}
+
+/* Hero Section (Full Screen) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* PC වලට */
+  height: 100dvh; /* Mobile screen එකට හරියටම ෆිට් වෙන්න */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+}
+
+/* Background Photo Slider Container */
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Slides Base Styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 16s infinite; /* 4 Photos x 4 Seconds = 16s cycle */
+}
+
+/* ඡායාරූප 4 හි Image Links (මෙතනට ඔයාගේ Photo Links දාන්න) */
+.slide-1 {
+  background-image: url('t1.jpg');
+  animation-delay: 0s;
+}
+
+.slide-2 {
+  background-image: url('t2.jpg');
+  animation-delay: 4s;
+}
+
+.slide-3 {
+  background-image: url('t3.jpg');
+  animation-delay: 8s;
+}
+
+.slide-4 {
+  background-image: url('t4.jpg');
+  animation-delay: 12s;
+}
+
+/* Photo 4 මාරු වෙන Animation Keyframes */
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  6% { opacity: 1; }   /* Fade in */
+  25% { opacity: 1; }  /* Visible for 4 seconds */
+  31% { opacity: 0; }  /* Fade out */
+  100% { opacity: 0; }
+}
+
+/* Dark Gradient Overlay for Text Visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+/* Content Area */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Brand / Logo Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Main Big Title */
+.main-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.orange-text {
+  color: #ff7300; /* Screenshot එකේ තියෙන Orange Color එක */
+}
+
+/* Description Text */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-weight: 400;
+}
+
+/* Buttons Styling */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  color: #ffffff;
+  border: 2px solid #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e06500;
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 6%;
+  }
+
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.98rem;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+}
+
+/* PC Design Adjustment */
+@media (min-width: 992px) {
+  .btn-group {
+    flex-direction: row; /* PC එකේදී Button දෙක පසෙකින් තැබීමට */
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+    padding: 14px 32px;
+  }
+}
+
+
+/*result count*/
+/* Results Section Black & Gold Theme */
+.results-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.results-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gold Sub-tag */
+.sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* White Section Title */
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Counters Grid Layout */
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Counter Card Styling */
+.counter-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 35px 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Gold Gradient Numbers */
+.counter-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #d4af37 100%);
+  
+  /* Standard & WebKit Properties */
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Text Color Transparency */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Label */
+.counter-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .results-section {
+    padding: 50px 15px;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .counter-number {
+    font-size: 2.6rem;
+  }
+}
+
+
+/*result poto*/
+/* Orbit Section Background */
+.students-orbit-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.orbit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Orbit Wrapper (PC Size) */
+.orbit-wrapper {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 50px auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Gold Badge */
+.center-hub {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  z-index: 5;
+}
+
+.hub-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hub-sub {
+  font-size: 0.65rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* Outer Orbit Track Line & Rotation */
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  animation: rotateOrbit 25s linear infinite; /* කැරකෙන වේගය (25s) වෙනස් කළ හැක */
+}
+
+/* User එක උඩට Mouse එක ගෙනිච්චම Pause වෙන්න */
+.orbit-wrapper:hover .orbit-ring,
+.orbit-wrapper:hover .student-circle img {
+  animation-play-state: paused;
+}
+
+/* Student Photo Circles */
+.student-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  margin-top: -37.5px;
+  margin-left: -37.5px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  background: #111;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.student-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: counterRotate 25s linear infinite; /* ඡායාරූපය කෙළින්ම තබා ගැනීමට */
+}
+
+/* Angle Positioning for 8 Items (Radius: 180px) */
+.item-1 { transform: rotate(0deg) translate(180px) rotate(0deg); }
+.item-2 { transform: rotate(45deg) translate(180px) rotate(-45deg); }
+.item-3 { transform: rotate(90deg) translate(180px) rotate(-90deg); }
+.item-4 { transform: rotate(135deg) translate(180px) rotate(-135deg); }
+.item-5 { transform: rotate(180deg) translate(180px) rotate(-180deg); }
+.item-6 { transform: rotate(225deg) translate(180px) rotate(-225deg); }
+.item-7 { transform: rotate(270deg) translate(180px) rotate(-270deg); }
+.item-8 { transform: rotate(315deg) translate(180px) rotate(-315deg); }
+
+/* Animation Keyframes */
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Mobile Screen Responsiveness (Resize for Small Displays) */
+@media (max-width: 500px) {
+  .orbit-wrapper {
+    width: 290px;
+    height: 290px;
+    margin-top: 35px;
+  }
+
+  .center-hub {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hub-title {
+    font-size: 1rem;
+  }
+
+  .hub-sub {
+    font-size: 0.55rem;
+  }
+
+  .student-circle {
+    width: 55px;
+    height: 55px;
+    margin-top: -27.5px;
+    margin-left: -27.5px;
+  }
+
+  /* Mobile Radius Adjustment (Radius: 120px) */
+  .item-1 { transform: rotate(0deg) translate(120px) rotate(0deg); }
+  .item-2 { transform: rotate(45deg) translate(120px) rotate(-45deg); }
+  .item-3 { transform: rotate(90deg) translate(120px) rotate(-90deg); }
+  .item-4 { transform: rotate(135deg) translate(120px) rotate(-135deg); }
+  .item-5 { transform: rotate(180deg) translate(120px) rotate(-180deg); }
+  .item-6 { transform: rotate(225deg) translate(120px) rotate(-225deg); }
+  .item-7 { transform: rotate(270deg) translate(120px) rotate(-270deg); }
+  .item-8 { transform: rotate(315deg) translate(120px) rotate(-315deg); }
+}
+
+
+
+/*class time table*/
+/* Schedule Section Styling */
+.schedule-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-section .sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.schedule-section .section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Grid Layout (Default PC: 3 columns) */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+/* Institute Card Styling */
+.institute-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Header (Logo + Name + Location) */
+.inst-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inst-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.inst-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.inst-location {
+  font-size: 0.8rem;
+  color: #d4af37;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Batch Content Box */
+.batch-content {
+  margin-top: 15px;
+}
+
+.batch-box {
+  padding: 6px 0;
+}
+
+.batch-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.batch-time {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  line-height: 1.4;
+}
+
+/* Inner Divider line separating 2027 and 2028 */
+.inner-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 10px 0;
+}
+
+/* Mobile Screen Responsiveness: Box 2 per row */
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 50px 10px;
+  }
+
+  .schedule-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Mobile එකේදී box 2ක් පසෙකින් පෙන්වීමට */
+  .schedule-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+
+  .institute-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .inst-header {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .inst-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inst-name {
+    font-size: 0.82rem;
+  }
+
+  .inst-location {
+    font-size: 0.7rem;
+  }
+
+  .batch-title {
+    font-size: 0.78rem;
+  }
+
+  .batch-time {
+    font-size: 0.72rem;
+  }
+
+  .inner-divider {
+    margin: 8px 0;
+  }
+}
+
+
+/*text animation*/
+/* Base Styling for Scroll Text Animations */
+.scroll-anim {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Effect 1: Fade Up */
+.scroll-anim.fade-up {
+  transform: translateY(80px);
+}
+
+/* Effect 2: Fade In Left */
+.scroll-anim.fade-in-left {
+  transform: translateX(-50px);
+}
+
+/* Effect 3: Zoom In */
+.scroll-anim.zoom-in {
+  transform: scale(0.85);
+}
+
+/* Active State (Scroll කරලා ඒ ස්ථානයට ආ පසු ක්‍රියාත්මක වේ) */
+.scroll-anim.appear {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+
+
+/*payment box*/
+/* Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container Styling */
+.online-class-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Design */
+.teacher-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Teacher Image Styling */
+.teacher-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.teacher-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Buttons Alignment */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base Button Style */
+.btn {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Red Button - Register */
+.btn-register {
+    background-color: #dc3545;
+}
+
+.btn-register:hover {
+    background-color: #c82333;
+}
+
+/* Green Button - Payment */
+.btn-payment {
+    background-color: #28a745;
+}
+
+.btn-payment:hover {
+    background-color: #218838;
+}
+
+/* POPUP MODAL STYLING */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.65); 
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: popupAnim 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #777777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #000000;
+}
+
+.payment-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/*memory*/
+/* Memories Gallery Section */
+.memories-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.memories-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gallery Grid Layout (PC Setup) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  height: 240px;
+  background: #111111;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* First Photo: Featured Large Box */
+.gallery-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 496px;
+}
+
+/* Image Hover Zoom Effect */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Text Overlay on Hover */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .memories-section {
+    padding: 50px 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  /* Mobile එකේදී ප්‍රධාන Photo එක උඩින්ම පළල්ව පෙනෙන පරිදි */
+  .gallery-item.item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 210px;
+  }
+
+  .gallery-overlay {
+    opacity: 1; /* Touch screens සඳහා නිතරම text එක පෙනෙන පරිදි */
+    font-size: 0.78rem;
+    padding: 10px;
+  }
+}
+
+
+
+/*rsvp*/
+/* පෝරමය සඳහා සැකසුම් (Form Section Styles) */
+.rsvp-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    box-sizing: border-box; /* පෝරමය එළියට පනින්නේ නැති වෙන්න */
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        padding: 25px 20px;
+    }
+    .rsvp-section .section-title {
+        font-size: 20px;
+    }
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #25D366; /* WhatsApp කොළ පාට */
+}
+
+.contact-box .section-title {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* සාමාන්‍ය විස්තර (Phone & Email) */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    font-size: 18px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    font-size: 20px;
+}
+
+/* WhatsApp බොත්තම */
+.whatsapp-container {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366; /* Official WhatsApp Color */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+}
+
+.wa-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 30px 20px;
+    }
+    
+    .contact-box .section-title {
+        font-size: 22px;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+}
+.divider-line {
+    border-top: 1px solid #ffffff; /* සුදු පාට ඉර */
+    margin: 12px 0;                 /* උඩින් සහ යටින් ඉඩ (Gap) */
+    opacity: 0.6;                   /* ලස්සනට පෙනෙන්න පොඩි opacity එකක් (ඕන නැත්නම් මේ පේලිය අයින් කරන්න) */
+}
+
+
+
+/*profile poto*/
+/* Teacher Profile Section */
+.teacher-profile-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-profile-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Gold Gradient Border Frame */
+.teacher-img-wrapper {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  padding: 6px; /* Gold Border එකේ මහත */
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #d4af37 100%); /* Gold Gradient */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* Subtle Gold Glow */
+  flex-shrink: 0;
+}
+
+.teacher-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  background-color: #111111;
+  display: block;
+}
+
+/* Details Section Styling */
+.teacher-details {
+  max-width: 500px;
+  text-align: left;
+}
+
+.teacher-details .sub-tag {
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.teacher-name {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 10px 0 15px 0;
+  font-weight: 800;
+}
+
+.teacher-bio {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teacher-profile-section {
+    padding: 50px 15px;
+  }
+
+  .teacher-profile-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .teacher-details {
+    text-align: center;
+  }
+
+  .teacher-img-wrapper {
+    width: 250px;
+    height: 300px;
+  }
+
+  .teacher-name {
+    font-size: 1.8rem;
+  }
+
+  .teacher-bio {
+    font-size: 0.92rem;
+  }
+}
+
+
+
+/*rejister form*/
+/* Registration Section Styling */
+.registration-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.registration-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.reg-card {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.reg-title {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.reg-description {
+  font-size: 1rem;
+  color: #cccccc;
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Gold Gradient Registration Button */
+.reg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.reg-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+}
+
+.reg-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.reg-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 50px 15px;
+  }
+
+  .reg-card {
+    padding: 30px 18px;
+    border-radius: 16px;
+  }
+
+  .reg-title {
+    font-size: 1.4rem;
+  }
+
+  .reg-description {
+    font-size: 0.9rem;
+  }
+
+  .reg-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/*about sir*/
+/* --- About Sir Section Styles --- */
+.sir-about-section {
+    background-color: #09090b;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+
+.sir-about-section * {
+    box-sizing: border-box;
+}
+
+.sir-about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: #121215;
+    border: 1px solid #27272a;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.sir-image-wrapper {
+    flex: 1;
+    max-width: 380px;
+    position: relative;
+}
+
+.sir-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #f59e0b;
+    border-radius: 16px;
+    z-index: 0;
+}
+
+.sir-profile-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.sir-content-wrapper {
+    flex: 1.4;
+}
+
+.sir-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.sir-title-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    line-height: 1.3;
+}
+
+.sir-subject-text {
+    font-size: 1.1rem;
+    color: #a1a1aa;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+
+.sir-bio-desc {
+    color: #d4d4d8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+}
+
+.sir-qual-heading {
+    font-size: 1.1rem;
+    color: #fbbf24;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.sir-qual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sir-qual-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #18181b;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-left: 3px solid #f59e0b;
+    font-size: 0.95rem;
+    color: #e4e4e7;
+}
+
+.sir-qual-item i {
+    color: #f59e0b;
+    font-size: 1.1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+    .sir-about-container {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 35px;
+        text-align: center;
+    }
+
+    .sir-image-wrapper {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .sir-title-name {
+        font-size: 1.8rem;
+    }
+
+    .sir-qual-item {
+        text-align: left;
+    }
+}
+
+
+/*2029 class*/
+/* --- 2029 Chemistry Class Schedule Styles --- */
+.chem-schedule-section {
+    background-color: #09090b;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+
+.chem-schedule-section * {
+    box-sizing: border-box;
+}
+
+.chem-schedule-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.chem-schedule-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.chem-schedule-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.chem-schedule-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.chem-schedule-subtitle {
+    color: #a1a1aa;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 2x2 Grid Layout */
+.chem-schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.chem-inst-card {
+    background: #121215;
+    border: 1px solid #27272a;
+    border-radius: 20px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chem-inst-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.55);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+}
+
+/* Top Section with Circle Date Badge */
+.chem-card-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.chem-date-badge {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    border-radius: 50%;
+    background: #09090b;
+    border: 2px solid #f59e0b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.chem-month {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.chem-day {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #fbbf24;
+    line-height: 1.1;
+}
+
+.chem-inst-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chem-start-label {
+    font-size: 0.75rem;
+    color: #a1a1aa;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.chem-inst-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.chem-first-day {
+    font-size: 0.92rem;
+    color: #fbbf24;
+    font-weight: 600;
+    margin: 0;
+}
+
+.chem-first-day i {
+    margin-right: 5px;
+}
+
+/* Groups Box */
+.chem-groups-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #18181b;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #242429;
+}
+
+.chem-group-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chem-group-item + .chem-group-item {
+    padding-top: 12px;
+    border-top: 1px dashed #2e2e34;
+}
+
+.chem-group-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chem-group-tag {
+    background: #ea580c; /* Poster Orange-Red Accent */
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+}
+
+.chem-group-date {
+    background: #fbbf24; /* Gold Accent */
+    color: #09090b;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 5px;
+}
+
+.chem-group-time {
+    color: #e4e4e7;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.chem-group-time i {
+    color: #f59e0b;
+    margin-right: 6px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .chem-schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .chem-schedule-title {
+        font-size: 1.65rem;
+    }
+
+    .chem-inst-card {
+        padding: 20px;
+    }
+
+    .chem-date-badge {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+    }
+
+    .chem-day {
+        font-size: 1.45rem;
+    }
+
+    .chem-inst-name {
+        font-size: 1.15rem;
+    }
+}
+
+/*register form*/
+/* --- Student Registration Form Styles --- */
+.chem-reg-section {
+    background-color: #09090b;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+
+.chem-reg-section * {
+    box-sizing: border-box;
+}
+
+.chem-reg-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #121215;
+    border: 1px solid #27272a;
+    border-radius: 22px;
+    padding: 40px 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+}
+
+.chem-reg-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.chem-reg-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.chem-reg-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.chem-reg-subtitle {
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.chem-reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chem-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chem-form-group label {
+    color: #e4e4e7;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chem-form-group label i {
+    color: #f59e0b;
+    width: 16px;
+    text-align: center;
+}
+
+.chem-form-group input,
+.chem-form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background: #18181b;
+    border: 1px solid #2e2e34;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chem-form-group input::placeholder {
+    color: #71717a;
+}
+
+.chem-form-group input:focus,
+.chem-form-group select:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.chem-form-group select option {
+    background: #18181b;
+    color: #ffffff;
+}
+
+/* WhatsApp Button */
+.chem-whatsapp-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+}
+
+.chem-whatsapp-btn i {
+    font-size: 1.3rem;
+}
+
+.chem-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.chem-whatsapp-btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .chem-reg-container {
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
+
+    .chem-reg-title {
+        font-size: 1.55rem;
+    }
+
+    .chem-form-group input,
+    .chem-form-group select {
+        padding: 13px 14px;
+        font-size: 0.95rem;
+    }
+
+    .chem-whatsapp-btn {
+        font-size: 1rem;
+        padding: 14px 16px;
+    }
+}
+
+
+
+/*comment section*/
+/* --- Student Reviews Section (White Theme) --- */
+.chem-reviews-section {
+    background-color: #ffffff;
+    padding: 70px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    color: #18181b;
+}
+
+.chem-reviews-section * {
+    box-sizing: border-box;
+}
+
+.chem-reviews-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.chem-reviews-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.chem-reviews-badge {
+    display: inline-block;
+    background: #fef3c7;
+    color: #d97706;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border: 1px solid #fde68a;
+}
+
+.chem-reviews-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #09090b;
+    margin: 0 0 8px 0;
+}
+
+.chem-reviews-subtitle {
+    color: #52525b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Horizontal Scrollable Container */
+.chem-reviews-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 15px 5px 25px 5px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Clean Custom Scrollbar for Desktop */
+.chem-reviews-slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.chem-reviews-slider::-webkit-scrollbar-track {
+    background: #f4f4f5;
+    border-radius: 10px;
+}
+
+.chem-reviews-slider::-webkit-scrollbar-thumb {
+    background: #d4d4d8;
+    border-radius: 10px;
+}
+
+.chem-reviews-slider::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+
+/* Individual Review Card */
+.chem-review-card {
+    flex: 0 0 calc(33.333% - 16px); /* Desktop එකේ Cards 3ක් පෙනේ */
+    min-width: 300px;
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 22px;
+    padding: 32px 24px;
+    text-align: center;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.chem-review-card:hover {
+    transform: translateY(-6px);
+    border-color: #f59e0b;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* Round Student Photo */
+.chem-student-avatar {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    margin-bottom: 16px;
+}
+
+.chem-student-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    display: block;
+}
+
+/* 5 Stars */
+.chem-review-stars {
+    display: flex;
+    gap: 5px;
+    color: #f59e0b;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+/* Comment Text */
+.chem-review-text {
+    color: #3f3f46;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    margin: 0 0 22px 0;
+    flex-grow: 1;
+}
+
+/* Student Name & Batch */
+.chem-student-info {
+    border-top: 1px solid #f4f4f5;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.chem-student-name {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #09090b;
+    margin: 0 0 3px 0;
+}
+
+.chem-student-batch {
+    font-size: 0.85rem;
+    color: #d97706;
+    font-weight: 600;
+}
+
+/* Mobile Swipe Hint */
+.chem-swipe-hint {
+    display: none;
+    text-align: center;
+    color: #71717a;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.chem-swipe-hint i {
+    color: #f59e0b;
+    margin-right: 6px;
+}
+
+/* Mobile Responsive View */
+@media (max-width: 768px) {
+    .chem-reviews-section {
+        padding: 55px 0 55px 20px; /* Right side padding අඩු කර ඇත ඊළඟ card එක පේන්න */
+    }
+
+    .chem-reviews-header {
+        padding-right: 20px;
+    }
+
+    .chem-reviews-title {
+        font-size: 1.7rem;
+    }
+
+    /* Mobile එකේදී එක Card එකක් පැහැදිලිව පෙනී ඊළඟ Card එකේ කොටසක් පේන විදිහට */
+    .chem-review-card {
+        flex: 0 0 84%;
+        min-width: 84%;
+        padding: 28px 20px;
+    }
+
+    .chem-reviews-slider {
+        padding-right: 20px;
+        scrollbar-width: none; /* Firefox scrollbar hide */
+    }
+
+    .chem-reviews-slider::-webkit-scrollbar {
+        display: none; /* Mobile Chrome/Safari scrollbar hide */
+    }
+
+    .chem-swipe-hint {
+        display: block;
+        padding-right: 20px;
+    }
+}
+
+
+
+/*footer*/
+/* --- Footer Section Styles --- */
+.chem-footer-section {
+    background-color: #060608; /* Darker tone for footer */
+    color: #a1a1aa;
+    padding: 50px 20px 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    border-top: 1px solid #1f1f23;
+}
+
+.chem-footer-section * {
+    box-sizing: border-box;
+}
+
+.chem-footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+/* Social Icons Wrapper */
+.chem-social-links {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Circular Social Icons */
+.chem-social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #121215;
+    border: 1px solid #27272a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e4e4e7;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover Effects & Brand Colors */
+.chem-social-icon.facebook:hover {
+    background: #1877f2;
+    color: #ffffff;
+    border-color: #1877f2;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+}
+
+.chem-social-icon.youtube:hover {
+    background: #ff0000;
+    color: #ffffff;
+    border-color: #ff0000;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+}
+
+.chem-social-icon.tiktok:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #fe2752;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(254, 39, 82, 0.4);
+}
+
+/* Divider Line */
+.chem-footer-divider {
+    width: 100%;
+    max-width: 400px;
+    height: 1px;
+    background: #27272a;
+}
+
+/* Credit & Developer Info */
+.chem-footer-credit {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chem-footer-credit p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #71717a;
+}
+
+.chem-dev-tag {
+    color: #a1a1aa !important;
+    font-size: 0.92rem !important;
+}
+
+.chem-brand-name {
+    color: #fbbf24; /* Gold Accent */
+    font-weight: 700;
+}
+
+.chem-footer-credit a {
+    color: #fbbf24;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.chem-footer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .chem-footer-section {
+        padding: 40px 20px 25px 20px;
+    }
+
+    .chem-social-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.05rem;
+    }
+
+    .chem-footer-credit p {
+        font-size: 0.85rem;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    
+    <!-- 4 Background Images Slider -->
+    <div class="bg-slider">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+
+    <!-- Text එක ලස්සනට පේන්න දාන Dark Overlay එක -->
+    <div class="overlay"></div>
+
+    <!-- එක තැන තියෙන Text සහ Buttons ටික -->
+    <div class="hero-content">
+      
+      <div class="brand">
+        <img src="logo.jpg" alt="Logo" class="logo" data-aos="fade-up" data-aos-duration="1300">
+        <span class="brand-name" data-aos="fade-up" data-aos-duration="1300">Chemistry — සචින්ද බණ්ඩාර</span>
+      </div>
+
+      <h1 class="main-title" data-aos="fade-up" data-aos-duration="1500"style="font-size: 25px;">
+        <span class="orange-text" >CHEMISTRY </span>CLASS
+      </h1>
+
+      <p class="description" data-aos="fade-up" data-aos-duration="1800">
+        සෑම දරුවෙක්ම පුද්ගලිකව <br> <b>සර්ගෙන්ම අධීක්ෂණයක්</b> - අතිශයින්ම Chemistry පමණයි.
+      </p>
+
+      <div class="btn-group">
+        <a href="#register-form" class="btn btn-primary" data-aos="fade-up" data-aos-duration="2100"> පන්තියට රෙජිස්ටර් වෙන්න</a>
+        <a href="#contact1" class="btn btn-outline" data-aos="fade-up" data-aos-duration="2300">WhatsApp හරහා අසන්න</a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- About Sir Section Start -->
+<section class="sir-about-section">
+    <div class="sir-about-container">
+        
+        <!-- Left Side: Sir's Photo -->
+        <div class="sir-image-wrapper scroll-anim fade-up">
+            <img src="about.jpg" alt="Teacher Photo" class="sir-profile-photo">
+        </div>
+
+        <!-- Right Side: Details & Degrees -->
+        <div class="sir-content-wrapper">
+            <span class="sir-badge scroll-anim fade-up">තාරුන්‍යයේ රිද්මය හදුනන්නා</span>
+            <h2 class="sir-title-name scroll-anim fade-up">සචින්ද බණ්ඩාර</h2>
+            <p class="sir-subject-text scroll-anim fade-up">විෂය - Chemistry </p>
+            
+            <p class="sir-bio-desc scroll-anim fade-up">
+                වසර ගණනාවක ඉගැන්වීමේ පළපුරුද්ද සමඟින්, සෑම දරුවෙකුටම තනි තනිව විශේෂ අවධානයක් (Individual Supervision) ලබා දෙමින් ඉතා සරලව සහ ප්‍රායෝගිකව විෂය කරුණු අවබෝධ කරවීම අපගේ එකම අරමුණයි.
+            </p>
+
+            <h3 class="sir-qual-heading scroll-anim fade-up">අධ්‍යාපන සුදුසුකම් (Qualifications):</h3>
+            <ul class="sir-qual-list scroll-anim fade-up">
+                <li class="sir-qual-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>B.Sc. in Chemistry</span>
+                </li>
+                <li class="sir-qual-item">
+                    <i class="fas fa-award"></i>
+                    <span>Dip.in Teaching Methodology</span>
+                </li>
+                <li class="sir-qual-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>වසර ගණනාවක උපකාරක පන්ති ඉගැන්වීමේ පළපුරුද්ද</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!-- About Sir Section End -->
+
+
+<!-- Class Schedule Section -->
+<section class="schedule-section">
+  <div class="schedule-container">
+    
+    <span class="sub-tag scroll-anim fade-up">පන්ති කාලසටහන 2027/2028</span>
+    <h2 class="section-title scroll-anim fade-up">අධ්‍යාපන ආයතන සහ වේලාවන්</h2>
+
+    <div class="schedule-grid">
+      
+      <!-- Institute Box 1 -->
+      <div class="institute-card scroll-anim fade-up">
+        <div class="inst-header">
+          <!--<img src="EYEKON.jpg" alt="Logo" class="inst-logo">-->
+          <div class="inst-info">
+            <h3 class="inst-name">නැණපුබුදු</h3>
+            <span class="inst-location"> හංවැල්ල (Hanvalla)</span>
+          </div>
+        </div>
+
+        <div class="batch-content">
+          <div class="batch-box">
+            <span class="batch-title">2027 Theory</span>
+            <p class="batch-time">බදාදා: ප.ව. 3.30 - 8.30</p> <br>
+            <span class="batch-title">2027 Paper Class</span>
+            <p class="batch-time">සදුදා: ප.ව. 3.30 - 6.30</p>
+          </div>
+
+          <div class="inner-divider"></div>
+
+          <div class="batch-box">
+            <span class="batch-title">2028 Theory</span>
+            <p class="batch-time">අගහරුවාදා: ප.ව. 3.30 - 6.30</p>
+            <span class="batch-title">2028 Paper Class</span>
+            <p class="batch-time">අගහරුවාදා: ප.ව. 6.30 - 8.30</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Institute Box 2 -->
+      <div class="institute-card scroll-anim fade-up">
+        <div class="inst-header">
+          <!--<img src="WASITY.jpg" alt="Logo" class="inst-logo">-->
+          <div class="inst-info">
+            <h3 class="inst-name">සිග්මා </h3>
+            <span class="inst-location">  කිරුළපන (Kirulapana)</span>
+          </div>
+        </div>
+
+        <div class="batch-content">
+          <div class="batch-box">
+            <span class="batch-title">2027 Theory</span>
+            <p class="batch-time">සදුදා: ප.ව. 3.30 - 6.30</p> <br>
+            <span class="batch-title">2027 Paper Class</span>
+            <p class="batch-time">සෙනසුරාදා: ප.ව. 2.30 - 9.00 </p>
+          </div>
+
+          <div class="inner-divider"></div>
+
+          <div class="batch-box">
+            <span class="batch-title">2028 Theory</span>
+            <p class="batch-time">බ්‍රහස්පතින්දා: ප.ව. 3.30 - 6.30</p>
+            <span class="batch-title">2028 Paper Class</span>
+            <p class="batch-time">බ්‍රහස්පතින්දා: ප.ව. 6.30 - 8.30</p>
+          </div>
+        </div>
+      </div>
+
+      
+     
+
+
+    </div>
+
+  </div>
+</section>
+
+<!-- 2029 Chemistry Class Schedule Section Start -->
+<section class="chem-schedule-section">
+    <div class="chem-schedule-container scroll-anim fade-up">
+        
+        <div class="chem-schedule-header scroll-anim fade-up">
+            <span class="chem-schedule-badge">රසායන විද්‍යාව | 2029 උසස් පෙළ</span>
+            <h2 class="chem-schedule-title">නව පන්ති ආරම්භය සහ කාලසටහන</h2>
+           
+        </div>
+
+        <div class="chem-schedule-grid scroll-anim fade-up">
+            
+            <!-- 01. SIGMA - KIRULAPANA -->
+            <div class="chem-inst-card">
+                <div class="chem-card-top">
+                    <div class="chem-date-badge scroll-anim fade-up">
+                        <span class="chem-month">DEC</span>
+                        <span class="chem-day">21</span>
+                    </div>
+                    <div class="chem-inst-info scroll-anim fade-up">
+                        <span class="chem-start-label">ආරම්භක දිනය</span>
+                        <h3 class="chem-inst-name">SIGMA - KIRULAPANA</h3>
+                        <p class="chem-first-day"><i class="far fa-clock"></i> සඳුදා ප.ව. 3.30 - 6.30</p>
+                    </div>
+                </div>
+
+                <div class="chem-groups-box">
+                    <div class="chem-group-item scroll-anim fade-up">
+                        <div class="chem-group-header">
+                            <span class="chem-group-tag">GROUP 01</span>
+                            <span class="chem-group-date">JAN: 04</span>
+                        </div>
+                        <p class="chem-group-time"><i class="far fa-calendar-check"></i> සඳුදා පෙ.ව. 8.30 - 12.30</p>
+                    </div>
+
+                    <div class="chem-group-item scroll-anim fade-up">
+                        <div class="chem-group-header">
+                            <span class="chem-group-tag">GROUP 02</span>
+                            <span class="chem-group-date">JAN: 07</span>
+                        </div>
+                        <p class="chem-group-time scroll-anim fade-up"><i class="far fa-calendar-check"></i> බ්‍රහස්. පෙ.ව. 11.30 - 2.30</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02. OCULAR - PADUKKA -->
+            <div class="chem-inst-card">
+                <div class="chem-card-top">
+                    <div class="chem-date-badge scroll-anim fade-up">
+                        <span class="chem-month">JAN</span>
+                        <span class="chem-day">02</span>
+                    </div>
+                    <div class="chem-inst-info scroll-anim fade-up">
+                        <span class="chem-start-label">ආරම්භක දිනය</span>
+                        <h3 class="chem-inst-name">OCULAR - PADUKKA</h3>
+                    </div>
+                </div>
+
+                <div class="chem-groups-box">
+                    <div class="chem-group-item">
+                        <div class="chem-group-header scroll-anim fade-up">
+                            <span class="chem-group-tag">GROUP 01</span>
+                            <span class="chem-group-date">JAN: 02</span>
+                        </div>
+                        <p class="chem-group-time scroll-anim fade-up"><i class="far fa-calendar-check"></i> සෙන. ප.ව. 3.30 - 6.30</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03. SIPSARA - PILIYANDALA -->
+            <div class="chem-inst-card">
+                <div class="chem-card-top">
+                    <div class="chem-date-badge scroll-anim fade-up">
+                        <span class="chem-month">JAN</span>
+                        <span class="chem-day">01</span>
+                    </div>
+                    <div class="chem-inst-info scroll-anim fade-up">
+                        <span class="chem-start-label">ආරම්භක දිනය</span>
+                        <h3 class="chem-inst-name">SIPSARA - PILIYANDALA</h3>
+                    </div>
+                </div>
+
+                <div class="chem-groups-box">
+                    <div class="chem-group-item">
+                        <div class="chem-group-header scroll-anim fade-up">
+                            <span class="chem-group-tag">GROUP 01</span>
+                            <span class="chem-group-date">JAN: 01</span>
+                        </div>
+                        <p class="chem-group-time scroll-anim fade-up"><i class="far fa-calendar-check"></i> සිකු. පෙ.ව. 8.30 - 12.30</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04. NENAPUBUDU - HANWELLA -->
+            <div class="chem-inst-card">
+                <div class="chem-card-top">
+                    <div class="chem-date-badge scroll-anim fade-up">
+                        <span class="chem-month">DEC</span>
+                        <span class="chem-day">22</span>
+                    </div>
+                    <div class="chem-inst-info scroll-anim fade-up">
+                        <span class="chem-start-label">ආරම්භක දිනය</span>
+                        <h3 class="chem-inst-name">NENAPUBUDU - HANWELLA</h3>
+                        <p class="chem-first-day"><i class="far fa-clock"></i> අඟහ. ප.ව. 3.30 - 6.30</p>
+                    </div>
+                </div>
+
+                <div class="chem-groups-box">
+                    <div class="chem-group-item">
+                        <div class="chem-group-header scroll-anim fade-up">
+                            <span class="chem-group-tag">GROUP 01</span>
+                            <span class="chem-group-date">JAN: 05</span>
+                        </div>
+                        <p class="chem-group-time scroll-anim fade-up"><i class="far fa-calendar-check"></i> අඟහ. පෙ.ව. 8.30 - 12.30</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- 2029 Chemistry Class Schedule Section End -->
+
+
+
+
+
+
+<!-- Memories Gallery Section -->
+<section class="memories-section">
+  <div class="memories-container">
+    
+    <span class="sub-tag">අපේ මතකයන්</span>
+    <h2 class="section-title">සිසුන් සමඟ සුන්දර මතක සටහන්</h2>
+
+    <div class="gallery-grid">
+      
+      <!-- Photo 1 (Main Featured Photo) -->
+      <div class="gallery-item item-large scroll-anim fade-up">
+        <img src="3.jpg" alt="Students Memory 1">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="100">
+        <img src="4.jpg" alt="Students Memory 2">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="200">
+        <img src="1.jpg" alt="Students Memory 3">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="300">
+        <img src="2.jpg" alt="Students Memory 4">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="400">
+        <img src="5.jpg" alt="Students Memory 5">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Student Registration Form Section Start -->
+<section class="chem-reg-section" id="register-form">
+    <div class="chem-reg-container">
+        
+        <div class="chem-reg-header scroll-anim fade-up">
+            <span class="chem-reg-badge">ලියාපදිංචි වීම | REGISTRATION</span>
+            <h2 class="chem-reg-title">පන්තිය සඳහා ලියාපදිංචි වන්න</h2>
+            <p class="chem-reg-subtitle">පහත තොරතුරු නිවැරදිව පුරවා WhatsApp හරහා යොමු කරන්න</p>
+        </div>
+
+        <form id="chemWhatsappForm" class="chem-reg-form scroll-anim fade-up">
+            
+            <!-- 1. Student Name -->
+            <div class="chem-form-group scroll-anim fade-up">
+                <label for="studentName"><i class="fas fa-user"></i> ශිෂ්‍යයාගේ නම (Student Name)</label>
+                <input type="text" id="studentName" placeholder="උදා: කසුන් පෙරේරා" required>
+            </div>
+
+            <!-- 2. Exam Year -->
+            <div class="chem-form-group scroll-anim fade-up">
+                <label for="examYear"><i class="fas fa-graduation-cap"></i> විභාග වර්ෂය (Exam Year)</label>
+                <div class="chem-select-wrapper">
+                    <select id="examYear" required>
+                        <option value="" disabled selected>විභාග වර්ෂය තෝරන්න...</option>
+                        <option value="2027 A/L">2027 A/L</option>
+                        <option value="2028 A/L">2028 A/L</option>
+                        <option value="2029 A/L">2029 A/L</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 3. School -->
+            <div class="chem-form-group scroll-anim fade-up">
+                <label for="studentSchool"><i class="fas fa-school"></i> පාසල (School)</label>
+                <input type="text" id="studentSchool" placeholder="උදා: ආනන්ද විද්‍යාලය, කොළඹ" required>
+            </div>
+
+            <!-- 4. Nearest City -->
+            <div class="chem-form-group scroll-anim fade-up">
+                <label for="nearestCity"><i class="fas fa-map-marker-alt"></i> ළඟම නගරය (Nearest City)</label>
+                <input type="text" id="nearestCity" placeholder="උදා: පිළියන්දල / හංවැල්ල" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="chem-whatsapp-btn scroll-anim fade-up">
+                <i class="fab fa-whatsapp"></i> WhatsApp හරහා ලියාපදිංචි වන්න
+            </button>
+
+        </form>
+
+    </div>
+</section>
+<!-- Student Registration Form Section End -->
+
+
+<!-- Teacher Profile / About Section -->
+<section class="teacher-profile-section ">
+  <div class="teacher-profile-container">
+    
+    <!-- Gold Bordered Photo Box -->
+    <div class="teacher-img-wrapper scroll-anim zoom-in">
+      <img src="logo.jpg" alt="Teacher Photo" class="teacher-img">
+    </div>
+
+    <!-- Teacher Bio / Details Side -->
+    <div class="teacher-details scroll-anim fade-up" data-delay="200">
+      <span class="sub-tag">ගුරු පියාණන්</span>
+      <h2 class="teacher-name">සචින්ද බණ්ඩාර</h2>
+      <p class="teacher-bio">
+        වසර ගණනක අත්දැකීම් සහිතව, දිවයින පුරා දහස් සංඛ්‍යාත සිසුන්ගේ A/L රසායන විද්‍යාව (Chemistry) ප්‍රතිඵල විශිෂ්ටත්වයට මග පෙන්වූ ගුරු පියාණන්.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Student Reviews Section Start -->
+<section class="chem-reviews-section">
+    <div class="chem-reviews-container scroll-anim fade-up">
+        
+        <div class="chem-reviews-header">
+            <span class="chem-reviews-badge">ශිෂ්‍ය ප්‍රතිචාර | STUDENT REVIEWS</span>
+            <h2 class="chem-reviews-title">සිසුන්ගේ අදහස්</h2>
+            <p class="chem-reviews-subtitle">අපගේ පන්ති සමඟ සම්බන්ධ වී විශිෂ්ට ප්‍රතිඵල ලබාගත් සිසුන්ගේ අත්දැකීම්</p>
+        </div>
+
+        <!-- Horizontal Scrollable Slider Wrapper -->
+        <div class="chem-reviews-slider">
+            
+            <!-- Review Card 01 -->
+            <div class="chem-review-card">
+                <div class="chem-student-avatar">
+                    <img src="s1.png" alt="Student Photo">
+                </div>
+                <div class="chem-review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="chem-review-text">
+                    " සචින්ත සර් කටපාඩම් කලාවෙන් ඔබ්බට ගිහිල්ලා හැම විශය කරුණකටම හේතුව කියල දුන්නා.එදා ගත්ත උදාහරණ තාමත් මට මතකයි. ඇත්තටම සර් තාරුණ්‍යයේ රිද්මය හදුනන ගුරුවරයෙක්."
+                </p>
+                <div class="chem-student-info">
+                    <h4 class="chem-student-name">මලීෂ කාවින්ද</h4>
+                    <span class="chem-student-batch"> මොරටුව විශ්වවිද්‍යාලය </span>
+                </div>
+            </div>
+
+            <!-- Review Card 02 -->
+            <div class="chem-review-card">
+                <div class="chem-student-avatar">
+                    <img src="s2.png" alt="Student Photo">
+                </div>
+                <div class="chem-review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="chem-review-text">
+                    "ඔහුගෙන් ඉගෙනගත්ත මා අද ජ'පුර වෛද්‍ය සිසුවෙකි.ඉතින් වෛද්‍ය හීනය තියන ඔබත් ඔහු එක්ක එකතු වෙන්න. රසායන විද්‍යාව ඔහුට බාර දෙන්න.ඔහු එය බලාගනී."
+                </p>
+                <div class="chem-student-info">
+                    <h4 class="chem-student-name">රශ්මිල ද සේරම්</h4>
+                    <span class="chem-student-batch"> ශ්‍රී ජයවර්දනපුර විශ්වවිද්‍යාලය</span>
+                </div>
+            </div>
+
+            <!-- Review Card 03 -->
+            <div class="chem-review-card">
+                <div class="chem-student-avatar">
+                    <img src="s3.png" alt="Student Photo">
+                </div>
+                <div class="chem-review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="chem-review-text">
+                    "සාම්ප්‍රදායික ටියුශන් ගුරුවරුන්ට එහා යමින් විභාග අවසන් වන තුරුම පසුපසින් සිටිමින් කල මගපෙන්වීම සහ අනෙකුත් විශය කරුනු පවා කියල දුන්න නිසා අද මම ඉංජිනේරු සිසුවෙක්."
+                </p>
+                <div class="chem-student-info">
+                    <h4 class="chem-student-name">මින්දක පියුමන්ත</h4>
+                    <span class="chem-student-batch">පේරාදෙණිය විශ්වවිද්‍යාලය</span>
+                </div>
+            </div>
+
+            <!-- Review Card 04 -->
+            <div class="chem-review-card">
+                <div class="chem-student-avatar">
+                    <img src="https://via.placeholder.com/150/f3f4f6/111827?text=Student" alt="Student Photo">
+                </div>
+                <div class="chem-review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="chem-review-text">
+                    "සර්ව මට හම්බෙන්නෙ 2 shy එකේදි සචින්ත සර්ගෙ ඉගැන්වීම් රටාව නිසා තර්කානුකූලව අදාල විශය කරුනු ඉගෙන ගන්න පුලුවන් උනා.ඒ නිසා රසායන විද්‍යාවට A සාමාර්ථයක් මට ලැබුනා"
+                </p>
+                <div class="chem-student-info">
+                    <h4 class="chem-student-name">ශාරද ජයතිලක</h4>
+                    <span class="chem-student-batch">මොරටුව විශ්වවිද්‍යාලය</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Swipe Indicator -->
+        <div class="chem-swipe-hint">
+            <i class="fas fa-arrows-alt-h"></i> තවත් අදහස් බැලීමට හරහට Scroll කරන්න
+        </div>
+
+    </div>
+</section>
+<!-- Student Reviews Section End -->
+
+
+
+<!-- සම්බන්ධ කරගැනීමේ කොටස (Contact Section) -->
+<section class="contact-section scroll-anim fade-up" id="contact">
+    <div class="container">
+        <div class="contact-box" id="contact1">
+            <h2 class="section-title">ගුරුතුමා සම්බන්ධ කරගන්න</h2>
+            <p class="contact-description">පන්ති පිළිබඳ වැඩිදුර විස්තර දැනගැනීමට පහත දුරකථන අංකයට අමතන්න හෝ WhatsApp හරහා පණිවිඩයක් එවන්න.</p>
+
+            <!-- සාමාන්‍ය විස්තර -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <p><strong>දුරකථන:</strong> 071 610 7374</p>
+                </div>
+              
+            </div>
+
+            <!-- WhatsApp බොත්තම -->
+            <div class="whatsapp-container">
+                <!-- 947XXXXXXXX වෙනුවට ඔයාගේ නම්බර් එක දාන්න (බිංදුව නැතුව 94 න් පටන්ගන්න) -->
+                <a href="https://wa.me/94716107374" target="_blank" class="whatsapp-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="wa-icon" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    WhatsApp හරහා සම්බන්ධ වන්න
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer Section Start -->
+<footer class="chem-footer-section">
+    <div class="chem-footer-container">
+        
+        <!-- Social Media Icons -->
+        <div class="chem-social-links scroll-anim fade-up">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1CM7EUcQgh/" target="_blank" rel="noopener noreferrer" class="chem-social-icon facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com/@sachindabandara1997?si=7YhCO6gnvat0JZQf" target="_blank" rel="noopener noreferrer" class="chem-social-icon youtube" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@chemistry.sachind?_r=1&_t=ZS-9BMRTilZy0A" target="_blank" rel="noopener noreferrer" class="chem-social-icon tiktok" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="chem-footer-divider"></div>
+
+        <!-- Developer Credit & Copyright -->
+        <div class="chem-footer-credit">
+            <p>© 2026 Chemistry - Sachinda Bandara. All Rights Reserved.</p>
+            <p class="chem-dev-tag">Website Designed & Developed by <span class="chem-brand-name">Home Artist</span> | <a href="tel:0781227941">078 122 7941</a></p>
+        </div>
+
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+
+  <!-- AOS JS Library -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    //mula thiyana text animation eka 
+  AOS.init({
+    once: true // Web page එක open වෙද්දි එක පාරක් විතරක් animate වෙන්න
+  });
+
+
+  //result count 
+ 
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-number');
+
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // Count වෙන්න යන මුළු කාලය (Milliseconds - 2 Seconds)
+      const stepTime = 20;
+      const totalSteps = duration / stepTime;
+      const increment = target / totalSteps;
+
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.innerText = target + "+"; // අගය ඉවර වුණාම අගට + සලකුණ වැටේ
+          clearInterval(timer);
+        } else {
+          counter.innerText = Math.ceil(current);
+        }
+      }, stepTime);
+    };
+
+    // User Scroll කරලා Section එකට ආවම විතරක් Count වෙන්න හදපු Observer එක
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          observer.unobserve(entry.target); // එක පාරක් වැඩ කළ පසු නතර වේ
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+
+//text animation 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedTexts = document.querySelectorAll('.scroll-anim');
+
+    const textObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+          }, delay);
+
+          textObserver.unobserve(entry.target); // එක පාරක් animate වූ පසු නතර වේ
+        }
+      });
+    }, {
+      threshold: 0.15 // Text එකෙන් 15%ක් Screen එකට ආ පසු Animation එක පටන් ගනී
+    });
+
+    animatedTexts.forEach(text => textObserver.observe(text));
+  });
+
+
+
+//payment box
+    // Payment Details Modal එක Open කරන Function එක
+function openPaymentModal() {
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+// Modal එක Close කරන Function එක
+function closePaymentModal() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+// Modal එකෙන් එලිය ක්ලික් කල විටත් auto close වන කෝඩ් එක
+window.onclick = function(event) {
+    var modal = document.getElementById("paymentModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+//register form
+document.getElementById('chemWhatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Form එකේ values ලබාගැනීම
+    const name = document.getElementById('studentName').value.trim();
+    const examYear = document.getElementById('examYear').value;
+    const school = document.getElementById('studentSchool').value.trim();
+    const city = document.getElementById('nearestCity').value.trim();
+
+    // WhatsApp Number (0716107374 -> 94716107374)
+    const phoneNumber = "94716107374";
+
+    // WhatsApp පණිවිඩය සකස් කිරීම
+    const message = `*CHEMISTRY - SACHINDA BANDARA*\n` +
+                    `_නව ශිෂ්‍ය ලියාපදිංචිය (New Registration)_\n\n` +
+                    ` *නම:* ${name}\n` +
+                    ` *විභාග වර්ෂය:* ${examYear}\n` +
+                    ` *පාසල:* ${school}\n` +
+                    ` *ළඟම නගරය:* ${city}`;
+
+    // URL Encode කර WhatsApp විවෘත කිරීම
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, '_blank');
+});
+
+
+</script>
+
+</body>
+</html>
